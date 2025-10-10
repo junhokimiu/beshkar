@@ -226,3 +226,30 @@
             color: #990000;
             font-weight: 600;
         }
+
+.content-row {
+    display: flex;              /* 가로로 나란히 배치 */
+    justify-content: center;    /* 전체를 가운데 정렬 */
+    align-items: flex-start;    /* 위쪽 기준 정렬 (원하면 center로 바꿔도 됨) */
+    gap: 2rem;                  /* 사진과 그래프 사이 간격 */
+    padding: 2rem 0;
+}
+
+.left, .right {
+    flex: 1;                    /* 양쪽 공간 동일하게 */
+    text-align: center;
+}
+
+.profile-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.graph-img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
