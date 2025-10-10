@@ -1,452 +1,219 @@
-
-* {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            /* Updated font family and colors to use better typography */
-            font-family: 'Source Sans Pro', sans-serif;
-            line-height: 1.6;
-            color: #2c2c2c;
-            background-color: #f7f2e7; /* IU Cream */
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            background-color: white;
-            box-shadow: 0 0 20px rgba(0,0,0,0.1);
-            min-height: 100vh;
-        }
-
-        /* Added hero section with background image */
-        .hero {
-            background-image: linear-gradient(rgba(153, 0, 0, 0.7), rgba(153, 0, 0, 0.7)), url('images/beshkar-background.png');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            color: #f7f2e7;
-            padding: 4rem 2rem;
-            text-align: center;
-            position: relative;
-        }
-
-        .hero h1 {
-            font-family: 'Crimson Text', serif;
-            font-size: 3.5rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-
-        .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
-            font-weight: 300;
-        }
-
-        .hero .email {
-            font-style: italic;
-            color: #f7f2e7;
-            opacity: 0.9;
-        }
-
-        nav {
-            /* Updated navigation colors to IU crimson */
-            background-color: #990000; /* IU Crimson */
-            padding: 0;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-
-        .nav-tabs {
-            display: flex;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-
-        .nav-tabs li {
-            flex: 1;
-        }
-
-        .nav-tabs button {
-            width: 100%;
-            padding: 1rem;
-            background: none;
-            border: none;
-            color: #f7f2e7;
-            font-size: 1rem;
-            font-weight: 400;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-family: 'Source Sans Pro', sans-serif;
-        }
-
-        .nav-tabs button:hover {
-            background-color: rgba(247, 242, 231, 0.1);
-            transform: translateY(-1px);
-        }
-
-        .nav-tabs button.active {
-            /* Updated active tab color to cream */
-            background-color: #f7f2e7;
-            color: #990000;
-            font-weight: 600;
-        }
-
-        .content {
-            padding: 2rem;
-        }
-
-        .tab-content {
-            display: none;
-        }
-
-        .tab-content.active {
-            display: block;
-        }
-
-        .section {
-            margin-bottom: 2rem;
-            animation: fadeIn 0.6s ease-in;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .section h2 {
-            /* Updated section headers to use Crimson Text and IU colors */
-            font-family: 'Crimson Text', serif;
-            color: #990000;
-            border-bottom: 3px solid #f7f2e7;
-            padding-bottom: 0.5rem;
-            margin-bottom: 1.5rem;
-            font-size: 1.8rem;
-            font-weight: 600;
-        }
-
-        .publication {
-            margin-bottom: 1.5rem;
-            padding: 1rem;
-            background-color: #fefefe;
-            border-left: 4px solid #f7f2e7;
-            border-radius: 4px;
-            transition: all 0.3s ease;
-        }
-
-        .publication:hover {
-            border-left-color: #990000;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-
-        .publication-title {
-            font-weight: 600;
-            color: #990000;
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
-            font-family: 'Crimson Text', serif;
-        }
-
-        .publication-details {
-            color: #666;
-            font-style: italic;
-            font-size: 0.95rem;
-        }
-
-        .coming-soon {
-            /* Updated coming soon section with IU colors */
-            background: linear-gradient(135deg, #f7f2e7, #ede5d3);
-            border: 2px dashed #990000;
-            padding: 3rem;
-            text-align: center;
-            border-radius: 12px;
-            margin: 2rem 0;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-
-        .coming-soon h3 {
-            color: #990000;
-            margin-bottom: 1rem;
-            font-family: 'Crimson Text', serif;
-            font-size: 1.5rem;
-            font-weight: 600;
-        }
-
-        .coming-soon p {
-            color: #666;
-            font-size: 1.1rem;
-        }
-
-        .coming-soon em {
-            color: #888;
-            font-size: 0.95rem;
-        }
-
-        @media (max-width: 768px) {
-            .nav-tabs {
-                flex-direction: column;
-            }
-            
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .hero {
-                padding: 3rem 1rem;
-                background-attachment: scroll;
-            }
-            
-            .content {
-                padding: 1rem;
-            }
-
-            .publication {
-                padding: 0.75rem;
-            }
-        }
-
-        /* Enhanced contact section styling */
-        .contact-info {
-            background-color: #fafafa;
-            padding: 2rem;
-            border-radius: 8px;
-            border: 1px solid #f7f2e7;
-        }
-
-        .contact-info p {
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
-        }
-
-        .contact-info strong {
-            color: #990000;
-            font-weight: 600;
-        }
-
-.content-row {
-    display: flex;              /* 가로로 나란히 배치 */
-    justify-content: center;    /* 전체를 가운데 정렬 */
-    align-items: flex-start;    /* 위쪽 기준 정렬 (원하면 center로 바꿔도 됨) */
-    gap: 2rem;                  /* 사진과 그래프 사이 간격 */
-    padding: 2rem 0;
+/* ========== Base ========== */
+:root{
+  --iu-crimson: #990000;
+  --cream: #f7f2e7;
+  --ink: #2c2c2c;
+  --muted: #666;
+  --card: #ffffff;
+  --shadow: 0 8px 24px rgba(0,0,0,.08);
 }
 
-.left, .right {
-    flex: 1;                    /* 양쪽 공간 동일하게 */
-    text-align: center;
+*{ margin:0; padding:0; box-sizing:border-box; }
+
+html, body{ height:100%; }
+
+body{
+  font-family:'Source Sans Pro',sans-serif;
+  line-height:1.6;
+  color:var(--ink);
+  background:var(--cream);
 }
 
-.profile-img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+/* ========== Shell ========== */
+.container{
+  max-width:1100px;
+  margin:0 auto;
+  background:var(--card);
+  min-height:100vh;
+  box-shadow:var(--shadow);
 }
 
-.graph-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
+/* ========== Hero ========== */
+.hero{
+  color:var(--cream);
+  background-image:
+    linear-gradient(rgba(153,0,0,.78), rgba(153,0,0,.78)),
+    url('images/beshkar-background.png');
+  background-size:cover;
+  background-position:center;
+  background-attachment:fixed;
+  padding:3.5rem 1.25rem;
 }
 
-/* Hero 안에서 좌우 배치 강제 */
+/* 두 칼럼 그리드 (왼쪽: 소개+사진, 오른쪽: 그래프) */
 .hero .content-row{
-  display: flex !important;
-  align-items: center;
-  justify-content: center;
-  gap: 2rem;
-  max-width: 1000px;   
-  margin: 0 auto;      
-  text-align: left;
-}
-
-/* 좌/우 칼럼 */
-.hero .left, .hero .right{
-  flex: 1 1 0;
-  min-width: 0;      
-}
-
-.prof-photo,
-.hero-graph{
-  display: block;
-  width: 100%;
-  max-width: 420px;    
-  height: auto;
-  margin: 0 auto;
-}
-
-/* 모바일에서는 세로 스택 */
-@media (max-width: 768px){
-  .hero .content-row{
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-}
-
-/* 소개 텍스트를 위쪽 왼쪽에 배치 */
-.intro-text {
-  max-width: 1000px;
-  margin: 0 auto 2rem auto;
-  text-align: left;
-}
-
-/* 이름 크기 약간 줄임 */
-.intro-text h1 {
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
-  font-family: 'Crimson Text', serif;
-}
-
-.intro-text p {
-  margin-bottom: 0.3rem;
-  font-size: 1.1rem;
-}
-
-/* 사진 + 그래프를 좌우 배치 */
-.hero .content-row {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 1.5rem;
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-/* 왼쪽/오른쪽 각각 폭 제한 */
-.hero .left, .hero .right {
-  flex: 1;
-  min-width: 0;
-  text-align: center;
-}
-
-/* 사진 크기 줄이기 */
-.prof-photo {
-  display: block;
-  width: 100%;
-  max-width: 300px;  /* 기존보다 작게 */
-  height: auto;
-  margin: 0 auto;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-
-/* 그래프 크기 줄이기 */
-.hero-graph {
-  display: block;
-  width: 100%;
-  max-width: 350px;  /* 기존보다 작게 */
-  height: auto;
-  margin: 0 auto;
-}
-
-/* 모바일에서는 세로로 */
-@media (max-width: 768px) {
-  .hero .content-row {
-    flex-direction: column;
-    align-items: center;
-  }
-  .intro-text {
-    text-align: center;
-  }
-}
-
-/* 메인 레이아웃 */
-.hero .content-row {
-  display: flex;
-  justify-content: center;
-  align-items: stretch;  /* 🔸 양쪽 높이를 균등하게 맞춤 */
-  gap: 2rem;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-/* 왼쪽: 세로 정렬 */
-.hero .left {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  gap: 1rem;
-  max-width: 400px;  /* 🔸 전체 폭 제한 */
-}
-
-/* 오른쪽: 그래프 중앙 정렬 */
-.hero .right {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  max-width: 500px;
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  align-items:start;
+  gap:2rem;
+  max-width:980px;
+  margin:0 auto;
 }
 
 /* 소개 텍스트 */
-.intro-text {
-  text-align: left;
-  width: 100%;
+.intro-text{
+  text-align:left;
+  margin-bottom:1rem;
 }
 
-.intro-text h1 {
-  font-size: 2rem;
-  margin-bottom: 0.4rem;
-  font-family: 'Crimson Text', serif;
+.intro-text h1{
+  font-family:'Crimson Text',serif;
+  font-size:2.75rem;
+  font-weight:600;
+  letter-spacing:.2px;
+  margin-bottom:.5rem;
+  text-shadow:2px 2px 4px rgba(0,0,0,.25);
 }
 
-.intro-text p {
-  font-size: 1rem;
-  margin-bottom: 0.2rem;
+.intro-text p{ font-size:1.06rem; margin-bottom:.25rem; }
+.intro-text .email{ font-style:italic; opacity:.95; }
+
+/* 왼쪽 컬럼: 세로 스택(소개 → 사진) */
+.left{
+  display:flex;
+  flex-direction:column;
+  gap:1rem;
 }
 
-/* 사진 크기: 그래프 높이에 맞게 살짝 줄이기 */
-.prof-photo {
-  width: 100%;
-  max-width: 280px;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  margin-top: auto;   /* 🔸 소개글 아래쪽에 자연스럽게 위치 */
+/* 오른쪽 컬럼: 그래프 중앙정렬 */
+.right{
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
 
-/* 그래프 크기 */
-.hero-graph {
-  width: 100%;
-  max-width: 400px;
-  height: auto;
-  display: block;
+/* 이미지 스케일(두 이미지의 시각 균형) */
+.prof-photo{
+  width:100%;
+  max-width:320px;
+  height:auto;
+  border-radius:10px;
+  box-shadow:0 6px 16px rgba(0,0,0,.18);
 }
 
-/* 모바일 대응 */
-@media (max-width: 768px) {
-  .hero .content-row {
-    flex-direction: column;
-    align-items: center;
+.hero-graph{
+  width:100%;
+  max-width:440px;  /* 그래프가 살짝 더 크도록 */
+  height:auto;
+  display:block;
+  border-radius:8px;
+  box-shadow:0 6px 16px rgba(0,0,0,.18);
+}
+
+/* ========== Nav ========== */
+nav{
+  background:var(--iu-crimson);
+  box-shadow:0 2px 6px rgba(0,0,0,.08);
+}
+
+.nav-tabs{
+  display:flex;
+  list-style:none;
+}
+
+.nav-tabs li{ flex:1; }
+
+.nav-tabs .tab-btn{
+  width:100%;
+  padding:1rem;
+  background:none;
+  border:0;
+  color:var(--cream);
+  font-size:1rem;
+  cursor:pointer;
+  transition:transform .2s ease, background-color .2s ease, color .2s ease;
+}
+
+.nav-tabs .tab-btn:hover{ background-color:rgba(247,242,231,.12); transform:translateY(-1px); }
+
+.nav-tabs .tab-btn.active{
+  background:var(--cream);
+  color:var(--iu-crimson);
+  font-weight:600;
+}
+
+/* ========== Content ========== */
+.content{ padding:2rem; }
+
+.tab-content{ display:none; }
+.tab-content.active{ display:block; }
+
+.section{
+  margin-bottom:2rem;
+  animation:fadeIn .45s ease-in;
+}
+
+@keyframes fadeIn{
+  from{ opacity:0; transform:translateY(14px); }
+  to{ opacity:1; transform:translateY(0); }
+}
+
+.section h2{
+  font-family:'Crimson Text',serif;
+  color:var(--iu-crimson);
+  border-bottom:3px solid var(--cream);
+  padding-bottom:.4rem;
+  margin-bottom:1rem;
+  font-size:1.6rem;
+  font-weight:600;
+}
+
+/* ========== Publication Cards ========== */
+.publication{
+  background:#fdfdfd;
+  border-left:4px solid var(--cream);
+  border-radius:6px;
+  padding:1rem;
+  margin-bottom:1rem;
+  transition:box-shadow .2s ease, border-color .2s ease;
+}
+
+.publication:hover{
+  border-left-color:var(--iu-crimson);
+  box-shadow:0 4px 14px rgba(0,0,0,.08);
+}
+
+.publication-title{
+  font-family:'Crimson Text',serif;
+  color:var(--iu-crimson);
+  font-size:1.1rem;
+  font-weight:600;
+  margin-bottom:.35rem;
+}
+
+.publication-details{
+  color:var(--muted);
+  font-style:italic;
+  font-size:.96rem;
+}
+
+/* ========== Contact Card ========== */
+.contact-info{
+  background:#fafafa;
+  border:1px solid var(--cream);
+  border-radius:10px;
+  padding:1.5rem;
+}
+
+.contact-info p{ margin-bottom:.75rem; font-size:1.05rem; }
+.contact-info strong{ color:var(--iu-crimson); }
+
+/* ========== Responsive ========== */
+@media (max-width: 980px){
+  .hero .content-row{
+    grid-template-columns: 1fr;     /* 세로 스택 */
+    gap:1.25rem;
   }
-  .hero .left {
-    align-items: center;
-  }
-  .intro-text {
-    text-align: center;
-  }
+  .intro-text{ text-align:center; }
+  .left{ align-items:center; }
+  .hero-graph{ max-width:520px; }
 }
 
-.container {
-            display: flex;
-            align-items: stretch;
-            justify-content: space-between;
-}
-
-.left {
-            flex: 1;
-            padding: 20px;
-}
-.right {
-            flex: 1;
-            padding: 20px;
+@media (max-width: 640px){
+  .hero{ padding:2.5rem 1rem; background-attachment:scroll; }
+  .intro-text h1{ font-size:2.2rem; }
+  .prof-photo{ max-width:260px; }
+  .content{ padding:1.25rem; }
+  .nav-tabs{ flex-direction:column; }
 }
 
