@@ -37,7 +37,7 @@ body{
   background-size:cover;
   background-position:center;
   background-attachment:fixed;
-  padding: 2.5rem 1.25rem 2rem 1.25rem;
+  padding: 2.5rem 1.25rem 0rem 1.25rem;
 }
 
 /* 두 칼럼 그리드 (왼쪽: 소개+사진, 오른쪽: 그래프) */
@@ -224,8 +224,10 @@ nav{
 .graph-title {
   font-family: 'Crimson Text', serif;
   font-size: 1.2rem;
-  color: #f7f2e7;   /* hero 배경에서 잘 보이게 */
+  color: #f7f2e7;   
   margin-bottom: 0.5rem;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+  text-align: center;
+  white-space: nowrap;
 }
 
