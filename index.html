@@ -7,9 +7,6 @@
     <!-- Added Google Fonts for better typography -->
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <style>
-        
-    </style>
 </head>
 <body>
     <div class="container">
@@ -35,11 +32,11 @@
 
         <nav>
             <ul class="nav-tabs">
-                <li><button class="tab-btn active" onclick="showTab('home')">Home</button></li>
-                <li><button class="tab-btn" onclick="showTab('research')">Research</button></li>
-                <li><button class="tab-btn" onclick="showTab('teaching')">Teaching</button></li>
-                <li><button class="tab-btn" onclick="showTab('contact')">Contact</button></li>
-                <li><button class="tab-btn" onclick="showTab('other-writings')">Other Writings</button></li>
+                <li><button class="tab-btn active" onclick="showTab('home', this)">Home</button></li>
+                <li><button class="tab-btn" onclick="showTab('research', this)">Research</button></li>
+                <li><button class="tab-btn" onclick="showTab('teaching', this)">Teaching</button></li>
+                <li><button class="tab-btn" onclick="showTab('contact', this)">Contact</button></li>
+                <li><button class="tab-btn" onclick="showTab('other-writings', this)">Other Writings</button></li>
             </ul>
         </nav>
 
@@ -197,25 +194,16 @@
     </div>
 
     <script>
-        function showTab(tabName) {
-            // Hide all tab contents
-            const tabContents = document.querySelectorAll('.tab-content');
-            tabContents.forEach(content => {
-                content.classList.remove('active');
-            });
+       function showTab(tabName, el){
+          document.querySelectorAll('.tab-content')
+         .forEach(c => c.classList.remove('active'));
+          document.getElementById(tabName).classList.add('active');
 
-            // Remove active class from all buttons
-            const tabButtons = document.querySelectorAll('.tab-btn');
-            tabButtons.forEach(button => {
-                button.classList.remove('active');
-            });
-
-            // Show selected tab content
-            document.getElementById(tabName).classList.add('active');
-
-            // Add active class to clicked button
-            event.target.classList.add('active');
+          document.querySelectorAll('.tab-btn')
+         .forEach(b => b.classList.remove('active'));
+          if (el) el.classList.add('active');
         }
+
     </script>
 </body>
 </html>
