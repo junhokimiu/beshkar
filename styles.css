@@ -93,7 +93,7 @@ body{
 
 .hero-graph{
   width:100%;
-  max-width:440px;  /* 그래프가 살짝 더 크도록 */
+  max-width:500px;  
   height:auto;
   display:block;
   border-radius:8px;
