@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mostafa Beshkar - Academic Homepage</title>
+    <!-- Added Google Fonts for better typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            /* Updated font family and colors to use better typography */
+            font-family: 'Source Sans Pro', sans-serif;
+            line-height: 1.6;
+            color: #2c2c2c;
+            background-color: #f7f2e7; /* IU Cream */
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            min-height: 100vh;
+        }
+
+        /* Added hero section with background image */
+        .hero {
+            background-image: linear-gradient(rgba(153, 0, 0, 0.7), rgba(153, 0, 0, 0.7)), url('images/beshkar-background.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #f7f2e7;
+            padding: 4rem 2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-family: 'Crimson Text', serif;
+            font-size: 3.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            font-weight: 300;
+        }
+
+        .hero .email {
+            font-style: italic;
+            color: #f7f2e7;
+            opacity: 0.9;
+        }
+
+        nav {
+            /* Updated navigation colors to IU crimson */
+            background-color: #990000; /* IU Crimson */
+            padding: 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .nav-tabs {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-tabs li {
+            flex: 1;
+        }
+
+        .nav-tabs button {
+            width: 100%;
+            padding: 1rem;
+            background: none;
+            border: none;
+            color: #f7f2e7;
+            font-size: 1rem;
+            font-weight: 400;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Source Sans Pro', sans-serif;
+        }
+
+        .nav-tabs button:hover {
+            background-color: rgba(247, 242, 231, 0.1);
+            transform: translateY(-1px);
+        }
+
+        .nav-tabs button.active {
+            /* Updated active tab color to cream */
+            background-color: #f7f2e7;
+            color: #990000;
+            font-weight: 600;
+        }
+
+        .content {
+            padding: 2rem;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .section {
+            margin-bottom: 2rem;
+            animation: fadeIn 0.6s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .section h2 {
+            /* Updated section headers to use Crimson Text and IU colors */
+            font-family: 'Crimson Text', serif;
+            color: #990000;
+            border-bottom: 3px solid #f7f2e7;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+
+        .publication {
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background-color: #fefefe;
+            border-left: 4px solid #f7f2e7;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .publication:hover {
+            border-left-color: #990000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .publication-title {
+            font-weight: 600;
+            color: #990000;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            font-family: 'Crimson Text', serif;
+        }
+
+        .publication-details {
+            color: #666;
+            font-style: italic;
+            font-size: 0.95rem;
+        }
+
+        .coming-soon {
+            /* Updated coming soon section with IU colors */
+            background: linear-gradient(135deg, #f7f2e7, #ede5d3);
+            border: 2px dashed #990000;
+            padding: 3rem;
+            text-align: center;
+            border-radius: 12px;
+            margin: 2rem 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .coming-soon h3 {
+            color: #990000;
+            margin-bottom: 1rem;
+            font-family: 'Crimson Text', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .coming-soon p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        .coming-soon em {
+            color: #888;
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-tabs {
+                flex-direction: column;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero {
+                padding: 3rem 1rem;
+                background-attachment: scroll;
+            }
+            
+            .content {
+                padding: 1rem;
+            }
+
+            .publication {
+                padding: 0.75rem;
+            }
+        }
+
+        /* Enhanced contact section styling */
+        .contact-info {
+            background-color: #fafafa;
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid #f7f2e7;
+        }
+
+        .contact-info p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .contact-info strong {
+            color: #990000;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Replaced header with hero section using background image -->
+        <div class="hero">
+            <h1>Mostafa Beshkar</h1>
+            <p>Associate Professor of Economics</p>
+            <p>Indiana University-Bloomington</p>
+            <p class="email">mbeshkar@iu.edu</p>
+        </div>
+
+        <nav>
+            <ul class="nav-tabs">
+                <li><button class="tab-btn active" onclick="showTab('home')">Home</button></li>
+                <li><button class="tab-btn" onclick="showTab('research')">Research</button></li>
+                <li><button class="tab-btn" onclick="showTab('teaching')">Teaching</button></li>
+                <li><button class="tab-btn" onclick="showTab('contact')">Contact</button></li>
+                <li><button class="tab-btn" onclick="showTab('other-writings')">Other Writings</button></li>
+            </ul>
+        </nav>
+
+        <div class="content">
+            <!-- Home Tab -->
+            <div id="home" class="tab-content active">
+                <div class="section">
+                    <h2>Working Papers</h2>
+                    <div class="publication">
+                        <div class="publication-title">"The Balance of Concessions in Trade Agreements"</div>
+                        <div class="publication-details">(2024) (with Pao-Li Chang and Shenxi Song)</div>
+                    </div>
+                    <div class="publication">
+                        <div class="publication-title">"The Cost of Dissolving the WTO: The Role of Global Value Chains"</div>
+                        <div class="publication-details">(May 2020) (with Ahmad Lashkaripour)</div>
+                    </div>
+                    <div class="publication">
+                        <div class="publication-title">"Interdependence of Trade Policies in General Equilibrium"</div>
+                        <div class="publication-details">(June 2020) (with Ahmad Lashkaripour)</div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2>Publications</h2>
+                    <div class="publication">
+                        <div class="publication-title">"How Does Import Market Power Matter for Trade Agreements?"</div>
+                        <div class="publication-details">(2022) (with Ryan Lee) Journal of International Economics</div>
+                    </div>
+                    <div class="publication">
+                        <div class="publication-title">"Dispute Settlement with Second-Order Uncertainty"</div>
+                        <div class="publication-details">(2021) (with Jee-Hyeong Park) International Economic Review</div>
+                    </div>
+                    <div class="publication">
+                        <div class="publication-title">"Optimal Trade Policy with Trade Imbalances"</div>
+                        <div class="publication-details">(2020) (with Ali Shourideh) Journal of Monetary Economics</div>
+                    </div>
+                    <div class="publication">
+                        <div class="publication-title">"Trade Agreements: Theoretical Foundations"</div>
+                        <div class="publication-details">(2019) (With Eric W. Bond) Oxford Research Encyclopedia of Economics and Finance</div>
+                    </div>
+                    <div class="publication">
+                        <div class="publication-title">"Estimating a Model of Dispute Settlement in the World Trade Organization"</div>
+                        <div class="publication-details">(2019) (with Mahdi Majbouri) The WTO and Economic Development, MIT Press</div>
+                    </div>
+                    <div class="publication">
+                        <div class="publication-title">"Cap and Escape in Trade Agreements"</div>
+                        <div class="publication-details">(2017) (with Eric Bond) American Economic Journal - Microeconomics. 9(4): 171–202</div>
+                    </div>
+                    <div class="publication">
+                        <div class="publication-title">"Escape Clause in Trade Agreements"</div>
+                        <div class="publication-details">(2016) in Handbook of Commercial Policy. Ed. Bagwell and Staiger, Elsevier</div>
+                    </div>
+                    <div class="publication">
+                        <div class="publication-title">"Arbitration and Renegotiation in Trade Agreements"</div>
+                        <div class="publication-details">(2016) Journal of Law, Economics, and Organization</div>
+                    </div>
+                    <div class="publication">
+                        <div class="publication-title">"Revisiting Procedure and Precedent in the WTO: An Analysis of US – Countervailing and Anti-Dumping Measures (China)"</div>
+                        <div class="publication-details">(2016) (with Adam Chilton) World Trade Review 15(02), 375-395</div>
+                    </div>
+                    <div class="publication">
+                        <div class="publication-title">"Tariff Binding and Overhang: Theory and Evidence"</div>
+                        <div class="publication-details">(2015) (with Eric Bond and Youngwoo Rho) Journal of International Economics. 97 (1) 1-13 (Lead Article)</div>
+                    </div>
+                    <div class="publication">
+                        <div class="publication-title">"Safeguards and Investigations"</div>
+                        <div class="publication-details">(2014) (with Eric Bond) in Trade, Globalization and Development. Ed. Rajat Acharyya, Springer Verlag</div>
+                    </div>
+                    <div class="publication">
+                        <div class="publication-title">"Trade Skirmishes and Safeguards: A Theory of the WTO Dispute Settlement Process"</div>
+                        <div class="publication-details">Journal of International Economics 82 (1), September 2010, pp. 35-48</div>
+                    </div>
+                    <div class="publication">
+                        <div class="publication-title">"Optimal Remedies in International Trade Agreements"</div>
+                        <div class="publication-details">(2010) European Economic Review 54 (3) 455-466</div>
+                    </div>
+                    <div class="publication">
+                        <div class="publication-title">"The Theory of Dispute Resolution with Application to Intellectual Property Rights"</div>
+                        <div class="publication-details">(2008) Joint with Eric Bond, in Intellectual Property, Growth and Trade, Ed. Keith Maskus, Elsevier B.V.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Research Tab -->
+            <div id="research" class="tab-content">
+                <div class="section">
+                    <h2>Research Areas</h2>
+                    <p>My research focuses on international trade theory, trade agreements, and dispute settlement mechanisms in the World Trade Organization.</p>
+                </div>
+                
+                <div class="coming-soon">
+                    <h3>Data</h3>
+                    <p>Coming Soon</p>
+                    <p><em>This section will contain interactive data visualizations and datasets related to my research.</em></p>
+                </div>
+
+                <div class="section">
+                    <h2>Work in Progress</h2>
+                    <div class="publication">
+                        <div class="publication-title">"On the Distribution of Gains from Multinational Production"</div>
+                        <div class="publication-details">(2020)</div>
+                    </div>
+                    <div class="publication">
+                        <div class="publication-title">"Manipulating Expectations: China's Strategic Trade Policy in the 1990s"</div>
+                        <div class="publication-details">(2020)</div>
+                    </div>
+                    <div class="publication">
+                        <div class="publication-title">"The Long term Effects of Industrial Policy: The Case of Persian Rugs"</div>
+                        <div class="publication-details">(2021)</div>
+                    </div>
+                    <div class="publication">
+                        <div class="publication-title">"Making Trade Agreements Work for Oil-Exporting Developing Countries"</div>
+                        <div class="publication-details">(2022)</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Teaching Tab -->
+            <div id="teaching" class="tab-content">
+                <div class="section">
+                    <h2>Teaching</h2>
+                    <p>Information about courses and teaching philosophy will be added here.</p>
+                </div>
+            </div>
+
+            <!-- Contact Tab -->
+            <div id="contact" class="tab-content">
+                <div class="section">
+                    <h2>Contact Information</h2>
+                    <!-- Enhanced contact section with better styling -->
+                    <div class="contact-info">
+                        <p><strong>Email:</strong> mbeshkar@iu.edu</p>
+                        <p><strong>Institution:</strong> Indiana University-Bloomington</p>
+                        <p><strong>Department:</strong> Economics</p>
+                        <p><strong>Title:</strong> Associate Professor</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Other Writings Tab -->
+            <div id="other-writings" class="tab-content">
+                <div class="section">
+                    <h2>Book Reviews</h2>
+                    <div class="publication">
+                        <div class="publication-title">Review of "A World Trading System for the Twenty-First Century" By Robert Staiger</div>
+                        <div class="publication-details">(2023) Journal of Economic Literature 61(2), 736-744</div>
+                    </div>
+                    <div class="publication">
+                        <div class="publication-title">Review of "Trade Policy Flexibility and Enforcement in the WTO" By Simon Schropp</div>
+                        <div class="publication-details">(2010) World Trade Review 9: 542-545. Cambridge University Press</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showTab(tabName) {
+            // Hide all tab contents
+            const tabContents = document.querySelectorAll('.tab-content');
+            tabContents.forEach(content => {
+                content.classList.remove('active');
+            });
+
+            // Remove active class from all buttons
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            tabButtons.forEach(button => {
+                button.classList.remove('active');
+            });
+
+            // Show selected tab content
+            document.getElementById(tabName).classList.add('active');
+
+            // Add active class to clicked button
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>
