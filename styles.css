@@ -217,3 +217,15 @@ nav{
   .nav-tabs{ flex-direction:column; }
 }
 
+.graph-block {
+  text-align: center;
+}
+
+.graph-title {
+  font-family: 'Crimson Text', serif;
+  font-size: 1.2rem;
+  color: #f7f2e7;   /* hero 배경에서 잘 보이게 */
+  margin-bottom: 0.5rem;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+
