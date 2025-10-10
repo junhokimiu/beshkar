@@ -289,3 +289,71 @@
   }
 }
 
+/* 소개 텍스트를 위쪽 왼쪽에 배치 */
+.intro-text {
+  max-width: 1000px;
+  margin: 0 auto 2rem auto;
+  text-align: left;
+}
+
+/* 이름 크기 약간 줄임 */
+.intro-text h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  font-family: 'Crimson Text', serif;
+}
+
+.intro-text p {
+  margin-bottom: 0.3rem;
+  font-size: 1.1rem;
+}
+
+/* 사진 + 그래프를 좌우 배치 */
+.hero .content-row {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* 왼쪽/오른쪽 각각 폭 제한 */
+.hero .left, .hero .right {
+  flex: 1;
+  min-width: 0;
+  text-align: center;
+}
+
+/* 사진 크기 줄이기 */
+.prof-photo {
+  display: block;
+  width: 100%;
+  max-width: 300px;  /* 기존보다 작게 */
+  height: auto;
+  margin: 0 auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* 그래프 크기 줄이기 */
+.hero-graph {
+  display: block;
+  width: 100%;
+  max-width: 350px;  /* 기존보다 작게 */
+  height: auto;
+  margin: 0 auto;
+}
+
+/* 모바일에서는 세로로 */
+@media (max-width: 768px) {
+  .hero .content-row {
+    flex-direction: column;
+    align-items: center;
+  }
+  .intro-text {
+    text-align: center;
+  }
+}
+
+
