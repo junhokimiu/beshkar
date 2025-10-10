@@ -37,7 +37,7 @@ body{
   background-size:cover;
   background-position:center;
   background-attachment:fixed;
-  padding:3.5rem 1.25rem;
+  padding: 2.5rem 1.25rem 2rem 1.25rem;
 }
 
 /* 두 칼럼 그리드 (왼쪽: 소개+사진, 오른쪽: 그래프) */
