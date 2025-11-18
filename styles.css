@@ -65,7 +65,7 @@ body{
   text-shadow:2px 2px 4px rgba(0,0,0,.25);
 }
 
-.intro-text p{ font-size:1.06rem; margin-bottom:.25rem; }
+.intro-text p{ font-size:1.18rem; margin-bottom:.25rem; }
 .intro-text .email{ font-style:italic; opacity:.95; }
 
 /* 왼쪽 컬럼: 세로 스택(소개 → 사진) */
