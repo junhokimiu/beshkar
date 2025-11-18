@@ -85,7 +85,7 @@ body{
 /* 이미지 스케일(두 이미지의 시각 균형) */
 .prof-photo{
   width:100%;
-  max-width:320px;
+  max-width:250px;
   height:auto;
   border-radius:10px;
   box-shadow:0 6px 16px rgba(0,0,0,.18);
