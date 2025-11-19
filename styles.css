@@ -374,3 +374,39 @@ nav{
     padding-left: 1.5rem;
     padding-right: 1.5rem;
 }
+
+/* ========== HERO 전체 높이 줄이기 ========== */
+.hero {
+    padding-top: 1.2rem;
+    padding-bottom: 1.2rem;
+}
+
+/* ========== 왼쪽 인물 사진 줄이기 ========== */
+.prof-photo {
+    width: 190px;       /* 기존 260px → 확 줄임 */
+    height: auto;
+    border-radius: 14px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
+
+/* ========== 사회 아이콘 사진 아래 밀착시키기 ========== */
+.profile-area {
+    gap: 0.6rem;  /* 아이콘 간격 줄임 */
+}
+
+/* ========== 오른쪽 그래프 크기 줄이기 ========== */
+.hero-graph {
+    width: 85%;         /* 기존 100% 대비 작게 */
+    max-width: 540px;   /* 강제 축소 */
+    height: auto;
+    display: block;
+    margin: 0 auto;     /* 가운데 정렬 */
+    border-radius: 12px;
+}
+
+/* 그래프 박스(흰색 백그라운드)도 같이 축소 */
+.graph-block {
+    padding: 1rem;
+    max-width: 580px;
+    margin: 0 auto;
+}
