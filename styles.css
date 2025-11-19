@@ -150,7 +150,7 @@ body{
 /* 그래프 이미지 기본 크기 */
 .hero-graph{
   width:100%;
-  height:300px;         /* 세로 높이 조절 포인트 */
+  height:350px;         /* 세로 높이 조절 포인트 */
   border-radius:12px;
   box-shadow:0 6px 16px rgba(0,0,0,.18);
   object-fit:fill;      /* 약간 찌그러져도 OK */
