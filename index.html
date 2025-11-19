@@ -320,6 +320,39 @@
           if (el) el.classList.add('active');
         }
 
+        (function() {
+        const slides = document.querySelectorAll('.carousel-slide');
+        const prevBtn = document.querySelector('.carousel-btn.prev');
+        const nextBtn = document.querySelector('.carousel-btn.next');
+
+        if (!slides.length) return;
+
+        let current = 0;
+
+        function showSlide(index) {
+          slides[current].classList.remove('active');
+          current = (index + slides.length) % slides.length;
+          slides[current].classList.add('active');
+        }
+
+        prevBtn.addEventListener('click', function() {
+          showSlide(current - 1);
+        });
+
+        nextBtn.addEventListener('click', function() {
+          showSlide(current + 1);
+        });
+
+        slides[0].classList.add('active');
+
+        // 자동으로 넘기고 싶으면 아래 주석 해제 (예: 6초마다)
+        /*
+        setInterval(function() {
+          showSlide(current + 1);
+        }, 6000);
+        */
+      })();
+
     </script>
 </body>
 </html>
