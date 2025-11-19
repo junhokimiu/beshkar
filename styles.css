@@ -436,9 +436,10 @@ nav{
 }
 
 .hero-graph {
-    width: auto;            /* 가로폭 비율 유지 */
-    max-height: 350px;      /* ⭐ 이미지 높이 제한 → 여기서 조절! */
+    width: 100%;            /* 가로폭 비율 유지 */
+    max-width: 600px;       /* ⭐ 이미지 높이 제한 → 여기서 조절! */
     height: auto;
+    max-height: 350px; 
     object-fit: contain;    /* 비율 유지하면서 잘림 없이 축소 */
     display: block;
     margin: 0 auto;
