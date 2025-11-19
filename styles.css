@@ -21,11 +21,12 @@ body{
 
 /* ========== Shell ========== */
 .container{
-  max-width:1100px;
+  max-width:1180px;
   margin:0 auto;
   background:var(--card);
   min-height:100vh;
   box-shadow:var(--shadow);
+  padding:0 1.5rem;
 }
 
 /* ========== Hero ========== */
@@ -37,23 +38,30 @@ body{
   background-size:cover;
   background-position:center;
   background-attachment:fixed;
-  padding: 2.5rem 1.25rem 0rem 1.25rem;
+  padding:1rem 1.25rem 0.5rem 1.25rem;
 }
 
-/* 두 칼럼 그리드 (왼쪽: 소개+사진, 오른쪽: 그래프) */
 .hero .content-row{
-  display:grid;
-  grid-template-columns: 1fr 1fr;
-  align-items:start;
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
   gap:2rem;
-  max-width:980px;
+  max-width:1180px;
   margin:0 auto;
 }
 
-/* 소개 텍스트 */
+/* --- Left column: text + photo --- */
+.left{
+  flex:0 0 320px;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:0.8rem;
+}
+
 .intro-text{
+  margin:0 0 0.3rem 0;
   text-align:left;
-  margin-bottom:1rem;
 }
 
 .intro-text h1{
@@ -68,36 +76,127 @@ body{
 .intro-text p{ font-size:1.18rem; margin-bottom:.25rem; }
 .intro-text .email{ font-style:italic; opacity:.95; }
 
-/* 왼쪽 컬럼: 세로 스택(소개 → 사진) */
-.left{
+.intro-text .email a{
+  color:inherit;
+  text-decoration:underline;
+}
+.intro-text .email a:hover{ color:#a00; }
+
+/* 프로필 사진 + 소셜 아이콘 묶음 */
+.profile-area{
   display:flex;
   flex-direction:column;
-  gap:1rem;
+  align-items:center;
+  gap:0.6rem;
+  margin:0;
 }
 
-/* 오른쪽 컬럼: 그래프 중앙정렬 */
+.prof-photo{
+  display:block;
+  width:190px;
+  height:auto;
+  border-radius:14px;
+  box-shadow:0 6px 18px rgba(0,0,0,0.25);
+}
+
+/* 소셜 아이콘 */
+.social-icons{
+  display:flex;
+  justify-content:center;
+  gap:0.9rem;
+}
+
+.social-icons a{
+  text-decoration:none;
+}
+
+.social-icons i{
+  font-size:1.6rem;
+  color:#fdf7ea;
+  filter:drop-shadow(0 0 2px rgba(0,0,0,0.4));
+  transition:transform 0.15s ease, opacity 0.15s ease;
+}
+
+.social-icons i:hover{
+  transform:translateY(-2px);
+  opacity:0.8;
+}
+
+/* --- Right column: graph / carousel --- */
 .right{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:100%;
+}
+
+.graph-block{
+  width:100%;
+  max-width:700px;
+  padding:0.8rem;
+  margin:0 auto;
+  text-align:center;
+}
+
+.graph-title{
+  font-family:'Crimson Text',serif;
+  font-size:1.6rem;
+  color:var(--cream);
+  margin-bottom:0.5rem;
+  text-shadow:1px 1px 3px rgba(0,0,0,0.3);
+  white-space:nowrap;
+}
+
+/* 그래프 이미지 기본 크기 */
+.hero-graph{
+  width:100%;
+  height:300px;         /* 세로 높이 조절 포인트 */
+  border-radius:12px;
+  box-shadow:0 6px 16px rgba(0,0,0,.18);
+  object-fit:fill;      /* 약간 찌그러져도 OK */
+  display:block;
+  margin:0 auto;
+}
+
+/* ========== Carousel ========== */
+.carousel{
+  position:relative;
   display:flex;
   align-items:center;
   justify-content:center;
 }
 
-/* 이미지 스케일(두 이미지의 시각 균형) */
-.prof-photo{
-  width:100%;
-  max-width:250px;
-  height:auto;
-  border-radius:10px;
-  box-shadow:0 6px 16px rgba(0,0,0,.18);
+.carousel-track{
+  overflow:hidden;
 }
 
-.hero-graph{
-  width:100%;
-  max-width:600px;  
-  height:auto;
-  display:block;
-  border-radius:8px;
-  box-shadow:0 6px 16px rgba(0,0,0,.18);
+.carousel-slide{
+  display:none !important;
+}
+
+.carousel-slide.active{
+  display:block !important;
+}
+
+.carousel-btn{
+  background:rgba(0,0,0,0.4);
+  border:none;
+  color:#fdf7ea;
+  font-size:1.6rem;
+  width:2.2rem;
+  height:2.2rem;
+  border-radius:50%;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin:0 0.5rem;
+  transition:background 0.15s ease, transform 0.15s ease;
+}
+
+.carousel-btn:hover{
+  background:rgba(0,0,0,0.6);
+  transform:translateY(-1px);
 }
 
 /* ========== Nav ========== */
@@ -124,7 +223,10 @@ nav{
   transition:transform .2s ease, background-color .2s ease, color .2s ease;
 }
 
-.nav-tabs .tab-btn:hover{ background-color:rgba(247,242,231,.12); transform:translateY(-1px); }
+.nav-tabs .tab-btn:hover{
+  background-color:rgba(247,242,231,.12);
+  transform:translateY(-1px);
+}
 
 .nav-tabs .tab-btn.active{
   background:var(--cream);
@@ -200,302 +302,22 @@ nav{
 
 /* ========== Responsive ========== */
 @media (max-width: 980px){
+  .hero{
+    background-attachment:scroll;
+  }
   .hero .content-row{
-    grid-template-columns: 1fr;     /* 세로 스택 */
+    flex-direction:column;
     gap:1.25rem;
   }
   .intro-text{ text-align:center; }
   .left{ align-items:center; }
-  .hero-graph{ max-width:520px; }
+  .graph-title{ white-space:normal; }
 }
 
 @media (max-width: 640px){
-  .hero{ padding:2.5rem 1rem; background-attachment:scroll; }
+  .hero{ padding:1.5rem 1rem; }
   .intro-text h1{ font-size:2.2rem; }
-  .prof-photo{ max-width:260px; }
+  .prof-photo{ width:220px; }
   .content{ padding:1.25rem; }
   .nav-tabs{ flex-direction:column; }
-}
-
-.graph-block {
-  text-align: center;
-}
-
-.graph-title {
-  font-family: 'Crimson Text', serif;
-  font-size: 1.6rem;
-  color: #f7f2e7;   
-  margin-bottom: 0.5rem;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
-  text-align: center;
-  white-space: nowrap;
-}
-
-/* === Fix: hero 아래 공백 최소화 === */
-.hero{
-  padding: 2.5rem 1.25rem 0.25rem 1.25rem; /* bottom 거의 제거 */
-}
-.hero .content-row{ margin-bottom: 0; }     /* 하단 여백 방지 */
-.hero + nav{ margin-top: 0; }               /* hero 다음 nav 붙이기 */
-
-/* 이미지 하단 공백 방지 */
-.prof-photo{
-  display: block;
-  margin-bottom: 0;
-}
-
-/* === Fix: 그래프 제목 정렬/줄바꿈 === */
-.right{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-}
-.graph-block{
-  width: 100%;          /* 컬럼 폭 채워서 흐름 고정 */
-  text-align: center;
-}
-.graph-title{
-  white-space: nowrap;  /* 데스크탑: 한 줄 유지 */
-  text-align: center;
-}
-
-/* 모바일에서는 자동 줄바꿈 허용 */
-@media (max-width: 640px){
-  .graph-title{ white-space: normal; }
-}
-
-/* 프로필 사진과 소셜 아이콘을 묶어 가운데 정렬 */
-.profile-area {
-    display: flex;
-    flex-direction: column; /* 요소들을 수직으로 배치 */
-    align-items: center; /* 수평 가운데 정렬 */
-    margin-top: 20px;
-}
-
-.social-icons {
-    margin-top: 15px;
-    display: flex;
-    gap: 25px; 
-}
-
-.social-icons a {
-    color: #a00; 
-    text-decoration: none;
-    transition: color 0.2s;
-}
-
-.social-icons a:hover {
-    color: #555; 
-}
-
-.intro-text .email a {
-    color: inherit; 
-    text-decoration: underline;
-}
-
-.intro-text .email a:hover {
-    color: #a00; 
-}
-
-.hero .content-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;   /* 위쪽 라인 맞추기 */
-}
-
-/* 왼쪽 컬럼: 텍스트 + 사진 */
-.left {
-    flex: 0 0 320px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1.8rem;               /* 위아래 간격 일정하게 */
-}
-
-/* 이름/직함 텍스트 */
-.intro-text {
-    margin: 0;                 /* 이상한 여백 제거 */
-}
-
-/* 사진 + 아이콘 묶음 */
-.profile-area {
-    display: flex;
-    flex-direction: column;
-    align-items: center;       /* 사진/아이콘 가운뎃줄 */
-    gap: 0.9rem;               /* 사진과 아이콘 간격 */
-    margin: 0;                 /* 위쪽 여백 없애기 */
-}
-
-/* 인물 사진 크기/정렬 */
-.prof-photo {
-    display: block;
-    width: 260px;              /* 필요하면 240~280 조절 */
-    height: auto;
-    border-radius: 18px;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
-}
-
-/* ---------- 소셜 아이콘 스타일 ---------- */
-.social-icons {
-    display: flex;
-    justify-content: center;
-    gap: 0.9rem;
-}
-
-/* 링크 공통 */
-.social-icons a {
-    text-decoration: none;
-}
-
-/* 아이콘 모양 */
-.social-icons i {
-    font-size: 1.6rem;
-    color: #fdf7ea;            /* 밝은 아이보리 – 붉은 배경에서 잘 보임 */
-    filter: drop-shadow(0 0 2px rgba(0,0,0,0.4));
-    transition: transform 0.15s ease, opacity 0.15s ease;
-}
-
-.social-icons i:hover {
-    transform: translateY(-2px);
-    opacity: 0.8;
-}
-
-.container {
-    max-width: 1180px;
-    margin: 0 auto;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-}
-
-.hero .content-row {
-    max-width: 1180px;
-    margin: 0 auto;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-}
-
-/* ========== HERO 전체 높이 줄이기 ========== */
-.hero {
-    padding-top: 1rem;
-    padding-bottom: 0.5rem;
-}
-
-/* ========== 왼쪽 인물 사진 줄이기 ========== */
-.prof-photo {
-    width: 190px;       /* 기존 260px → 확 줄임 */
-    height: auto;
-    border-radius: 14px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
-}
-
-/* ========== 사회 아이콘 사진 아래 밀착시키기 ========== */
-.profile-area {
-    gap: 0.6rem;  /* 아이콘 간격 줄임 */
-}
-
-/* ========== 오른쪽 그래프 크기 줄이기 ========== */
-.hero-graph {
-    width: 85%;         /* 기존 100% 대비 작게 */
-    max-width: 540px;   /* 강제 축소 */
-    height: auto;
-    display: block;
-    margin: 0 auto;     /* 가운데 정렬 */
-    border-radius: 12px;
-}
-
-/* 그래프 박스(흰색 백그라운드)도 같이 축소 */
-.graph-block {
-    padding: 1rem;
-    max-width: 580px;
-    margin: 0 auto;
-}
-
-/* 텍스트(Associate Professor ~ email)와 사진 사이 간격 줄이기 */
-.left {
-    gap: 0.8rem;   /* 기본 1.8rem 정도 → 확 줄임 */
-}
-
-/* 텍스트 블록 아래 여백 제거 */
-.intro-text {
-    margin-bottom: 0.3rem;
-}
-
-/* 그래프 이미지 조정: 더 넓고 더 낮게 */
-.hero-graph {
-    width: 95%;          /* 가로폭 조금 더 넓게 */
-    max-width: 650px;    /* 기존보다 80~100px 더 넓힘 */
-    height: auto;        /* 세로는 자동 조정 → 높이 줄어듦 */
-    margin: 0 auto;
-}
-
-/* 그래프 감싸는 박스 크기도 함께 조정 */
-.graph-block {
-    max-width: 700px;    /* 오른쪽 박스를 더 넓게 */
-    padding: 0.8rem;     /* 패딩 줄여서 전체 높이 감소 */
-}
-
-.hero-graph {
-    width: 100%;        /* 가로는 그대로 꽉 차게 */
-    height: 400px;      /* ⭐ 세로 원하는 만큼 강제 조절 (여기 줄이면 납작해짐) */
-    object-fit: fill; 
-}
-
-.carousel {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* 슬라이드를 담는 트랙 */
-.carousel-track {
-    overflow: hidden;
-}
-
-/* 각각의 슬라이드 이미지 */
-.carousel-slide {
-    display: none;          /* 기본은 안 보이게 */
-}
-
-/* 현재 보이는 슬라이드 */
-.carousel-slide.active {
-    display: block;
-}
-
-/* 좌우 버튼 */
-.carousel-btn {
-    background: rgba(0,0,0,0.4);
-    border: none;
-    color: #fdf7ea;
-    font-size: 1.6rem;
-    width: 2.2rem;
-    height: 2.2rem;
-    border-radius: 50%;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 0.5rem;
-    transition: background 0.15s ease, transform 0.15s ease;
-}
-
-.carousel-btn:hover {
-    background: rgba(0,0,0,0.6);
-    transform: translateY(-1px);
-}
-
-/* 네가 이미 잡아둔 그래프 크기 규칙 유지 */
-.hero-graph {
-    width: 100%;
-    height: 300px;      /* 세로 높이: 원하면 260~320 사이로 조절 */
-    object-fit: fill;   /* 비율 조금 찌그러져도 괜찮다고 했으니 그대로 */
-}
-
-.carousel-slide {
-    display: none !important;
-}
-
-.carousel-slide.active {
-    display: block !important;
 }
