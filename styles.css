@@ -491,3 +491,7 @@ nav{
     height: 300px;      /* 세로 높이: 원하면 260~320 사이로 조절 */
     object-fit: fill;   /* 비율 조금 찌그러져도 괜찮다고 했으니 그대로 */
 }
+
+.carousel-slide {
+    display: none !important;
+}
