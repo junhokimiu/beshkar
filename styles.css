@@ -410,3 +410,27 @@ nav{
     max-width: 580px;
     margin: 0 auto;
 }
+
+/* 텍스트(Associate Professor ~ email)와 사진 사이 간격 줄이기 */
+.left {
+    gap: 0.8rem;   /* 기본 1.8rem 정도 → 확 줄임 */
+}
+
+/* 텍스트 블록 아래 여백 제거 */
+.intro-text {
+    margin-bottom: 0.3rem;
+}
+
+/* 그래프 이미지 조정: 더 넓고 더 낮게 */
+.hero-graph {
+    width: 95%;          /* 가로폭 조금 더 넓게 */
+    max-width: 650px;    /* 기존보다 80~100px 더 넓힘 */
+    height: auto;        /* 세로는 자동 조정 → 높이 줄어듦 */
+    margin: 0 auto;
+}
+
+/* 그래프 감싸는 박스 크기도 함께 조정 */
+.graph-block {
+    max-width: 700px;    /* 오른쪽 박스를 더 넓게 */
+    padding: 0.8rem;     /* 패딩 줄여서 전체 높이 감소 */
+}
