@@ -495,3 +495,7 @@ nav{
 .carousel-slide {
     display: none !important;
 }
+
+.carousel-slide.active {
+    display: block !important;
+}
