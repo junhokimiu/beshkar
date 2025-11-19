@@ -434,3 +434,12 @@ nav{
     max-width: 700px;    /* 오른쪽 박스를 더 넓게 */
     padding: 0.8rem;     /* 패딩 줄여서 전체 높이 감소 */
 }
+
+.hero-graph {
+    width: auto;            /* 가로폭 비율 유지 */
+    max-height: 350px;      /* ⭐ 이미지 높이 제한 → 여기서 조절! */
+    height: auto;
+    object-fit: contain;    /* 비율 유지하면서 잘림 없이 축소 */
+    display: block;
+    margin: 0 auto;
+}
