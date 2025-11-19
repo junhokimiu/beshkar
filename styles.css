@@ -440,3 +440,54 @@ nav{
     height: 400px;      /* ⭐ 세로 원하는 만큼 강제 조절 (여기 줄이면 납작해짐) */
     object-fit: fill; 
 }
+
+.carousel {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 슬라이드를 담는 트랙 */
+.carousel-track {
+    overflow: hidden;
+}
+
+/* 각각의 슬라이드 이미지 */
+.carousel-slide {
+    display: none;          /* 기본은 안 보이게 */
+}
+
+/* 현재 보이는 슬라이드 */
+.carousel-slide.active {
+    display: block;
+}
+
+/* 좌우 버튼 */
+.carousel-btn {
+    background: rgba(0,0,0,0.4);
+    border: none;
+    color: #fdf7ea;
+    font-size: 1.6rem;
+    width: 2.2rem;
+    height: 2.2rem;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0.5rem;
+    transition: background 0.15s ease, transform 0.15s ease;
+}
+
+.carousel-btn:hover {
+    background: rgba(0,0,0,0.6);
+    transform: translateY(-1px);
+}
+
+/* 네가 이미 잡아둔 그래프 크기 규칙 유지 */
+.hero-graph {
+    width: 100%;
+    height: 300px;      /* 세로 높이: 원하면 260~320 사이로 조절 */
+    object-fit: fill;   /* 비율 조금 찌그러져도 괜찮다고 했으니 그대로 */
+}
