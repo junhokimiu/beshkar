@@ -168,6 +168,8 @@ body{
 
 .carousel-track{
   overflow:hidden;
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 .carousel-slide{
@@ -315,7 +317,7 @@ nav{
 }
 
 @media (max-width: 640px){
-  .hero{ padding:1.5rem 1rem; }
+  .hero{ padding:1.5rem 0.5rem; }
   .intro-text h1{ font-size:2.2rem; }
   .prof-photo{ width:220px; }
   .content{ padding:1.25rem; }
