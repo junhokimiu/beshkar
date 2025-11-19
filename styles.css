@@ -265,4 +265,36 @@ nav{
   .graph-title{ white-space: normal; }
 }
 
+/* 프로필 사진과 소셜 아이콘을 묶어 가운데 정렬 */
+.profile-area {
+    display: flex;
+    flex-direction: column; /* 요소들을 수직으로 배치 */
+    align-items: center; /* 수평 가운데 정렬 */
+    margin-top: 20px;
+}
+
+.social-icons {
+    margin-top: 15px;
+    display: flex;
+    gap: 25px; 
+}
+
+.social-icons a {
+    color: #a00; 
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.social-icons a:hover {
+    color: #555; 
+}
+
+.intro-text .email a {
+    color: inherit; 
+    text-decoration: underline;
+}
+
+.intro-text .email a:hover {
+    color: #a00; 
+}
 
